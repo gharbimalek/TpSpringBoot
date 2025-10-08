@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
@@ -28,8 +27,6 @@ public class Reservation implements Serializable {
     Long idReservation;
     Date anneUniversitaire;
     Boolean estValide;
-    @ManyToOne
-    Chambre chambre;
     @ManyToMany(cascade = CascadeType.ALL)
     Set<Etudiant> etudiants;
     
