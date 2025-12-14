@@ -1,11 +1,13 @@
 package org.esprim.TpFoyer.entity;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
@@ -27,7 +29,11 @@ public class Reservation implements Serializable {
     Long idReservation;
     Date anneUniversitaire;
     Boolean estValide;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     Set<Etudiant> etudiants;
-    
+    @ManyToOne
+    Chambre chambre;
+
+    @Column(unique = true)
+    String numReservation;
 }

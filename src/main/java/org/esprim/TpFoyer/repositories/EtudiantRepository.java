@@ -1,5 +1,6 @@
 package org.esprim.TpFoyer.repositories;
 
+
 import org.esprim.TpFoyer.entity.Etudiant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

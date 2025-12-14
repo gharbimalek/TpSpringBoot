@@ -30,7 +30,7 @@ public class Etudiant implements Serializable {
     Long cin;
     String ecole;
     Date dateNaissance;
-    @ManyToMany(mappedBy="etudiants", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy="etudiants")
     Set<Reservation> reservations;
     
 }

@@ -30,5 +30,5 @@ public class Foyer implements Serializable {
     @OneToOne(mappedBy="foyer")
     Universite universite;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "foyer")
-    Set<Bloc> bloc;
+    Set<Bloc> blocs;
 }

@@ -16,6 +16,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 @Getter
 @Setter
@@ -27,11 +28,11 @@ public class Chambre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long idChambre;
-    Long numChambre;
+    Long numeroChambre;
     @Enumerated(EnumType.STRING)
     TypeChambre typeC;
-    @OneToMany(cascade = CascadeType.ALL)
-    Set<Reservation> reservations;
+    @OneToMany(mappedBy = "chambre", cascade = CascadeType.ALL)
+    Set<Reservation> reservations = new HashSet<>();
     @ManyToOne
     Bloc bloc;
    
